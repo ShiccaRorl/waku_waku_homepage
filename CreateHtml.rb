@@ -15,7 +15,7 @@ class CreateHtml
     @body            = File.open("./Config/template/body.erb", 'r:utf-8').read
     @autoupload_lftp = File.open("./Config/autoupload.lftp", 'r:utf-8').read
 
-    @body = @body.scan(/<body>.*?<\/body>/)
+    #@body = @body.scan(/<body>.*?<\/body>/)
 
 
 
@@ -51,6 +51,7 @@ class CreateHtml
 
   def create_body_index()
     # くっつける
+p @body
 
     header = @header.gsub("./../image", "./image")
     body = @body.gsub("./../image", "./image")
