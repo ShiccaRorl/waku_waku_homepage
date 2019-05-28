@@ -1,0 +1,35 @@
+﻿
+
+<a href="./index.html"><h1><%= @title %></h1></a>
+<br>
+<body>
+
+<center class="page">
+<a href="./index.html">1</a>
+<% i = 1 %>
+<% while i < @page_max - 1 do %>
+<a href="./index<%= i + 1 %>.html"><%= i + 1 %></a>
+<% i = i + 1 %>
+<% end %>
+<p>ページ</p>
+</center>
+
+<% @days.each{|day| %>
+<h2><span class="title">
+<% link = "日記" %>
+<a href="./main/index/<%= link = day[:Datetime].strftime("%Y%m%d") %>.html"><%= day[:Title] %></a></span></h2>
+<div class="lm"><span class="lm">Last Update: <%= hiduke = day[:Datetime].strftime("%Y-%m-%d %H:%M:%S %A") %></span></div>
+<p><%= day[:Log] %></p>
+<% } %>
+
+<center class="page">
+<a href="./index.html">1</a>
+<% i = 1 %>
+<% while i < @page_max - 1 do %>
+<a href="./index<%= i + 1 %>.html"><%= i + 1 %></a>
+<% i = i + 1 %>
+<% end %>
+<p>ページ</p>
+</center>
+
+</body>

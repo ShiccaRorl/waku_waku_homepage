@@ -1,0 +1,119 @@
+<body>
+<a class= "title" href="<%= @config.top_home_page %>"><p style="text-align: center"><%= @config.home_title %></p></a>
+<hr>
+
+
+<center class="page">
+  <a href="./index.html" id="page_a">1</a>
+  <% i = 1 %>
+  <% while i < @page_max - 1 do %>
+  <a href="./index<%= i + 1 %>.html" id="page_a"><%= i + 1 %></a>
+  <% i = i + 1 %>
+  <% end %>
+  <p>ページ</p>
+</center>
+
+<!-- [FC2 Analyzer] //analyzer.fc2.com/  -->
+<script language="javascript" src="//analyzer54.fc2.com/ana/processor.php?uid=2829039" type="text/javascript"></script>
+<noscript><div align="right"><img src="//analyzer54.fc2.com/ana/icon.php?uid=2829039&ref=&href=&wid=0&hei=0&col=0" /></div></noscript>
+<!-- [FC2 Analyzer]  -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-139925461-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-139925461-1');
+</script>
+
+
+
+
+<div class="left1"><p> </p></div>
+<div class="menu"><a href="./Book/index.html">Book</a></div>
+<div class="menu"><a href="./FreeSoft/index.html">FreeSoft</a></div>
+<div class="menu"><a href="./SoftWare/index.html">Software</a></div>
+<div class="menu"><a href="./JW_CAD/index.html">JW_CAD</a></div>
+
+<div class="reset"></div>
+
+<div class="left1">
+
+<script>
+  (function() {
+    var cx = '016104769430439245590:nvtgrc6vcxo';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+
+
+  <table border="0">
+    <tbody>
+      <% @calendar.get_years().each{|year| %>
+        <tr>
+          <td><%= year.split("-")[0] %></td>
+          <% i = 1 %>
+          <% while i <= 12 do %>
+          <td><a href="<%= year + ".html" %>" target="_top"><%= year.split("-")[1] %></a></td>
+          <% i = i + 1 %>
+          <% end %>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+
+
+    <script type="text/javascript" src="//35764641.ranking.fc2.com/accessory.js?rtype=ref" charset="utf-8"></script>
+    <script type="text/javascript" src="//35764641.ranking.fc2.com/accessory.js?rtype=page" charset="utf-8"></script>
+    <script type="text/javascript" src="//35764641.ranking.fc2.com/accessory.js?rtype=page" charset="utf-8"></script>
+    <a href="//35764641.ranking.fc2.com/" title="FC2USER511842OQTさんのランキング集計結果" />FC2USER511842OQTさんのランキング集計結果</a>
+	<p>掲示版です。足跡残していってください。<p>
+<iframe src="https://nyanmonaito.bbs.fc2.com/?parts=1&num=5&width=140&fsize=12" width="150" height="300" frameborder="1" marginheight="10" marginwidth="0">この部分は iframe 対応のブラウザでご覧ください。</iframe><br>
+<a href="nyanmonaito.wiki.fc2.com">WIKI</a><br>
+    <a href="https://form1ssl.fc2.com/form/?id=e1e2af08dbd28477">連絡</a><br>
+    <a href="https://blogranking.fc2.com/in.php?id=1042174" target="_blank"><img src="https://static.fc2.com/blogranking/ranking_banner/b_02.gif"></a><br>
+
+
+
+<a href="https://px.a8.net/svt/ejp?a8mat=2ZPMTX+T69F6+2OM2+TTLOX" target="_blank" rel="nofollow">
+<img border="0" width="250" height="250" alt="" src="https://www23.a8.net/svt/bgt?aid=180914901049&wid=001&eno=01&mid=s00000012521005009000&mc=1"></a>
+<img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=2ZPMTX+T69F6+2OM2+TTLOX" alt="">
+
+
+
+
+
+
+  </div>
+
+  <div class="left2">
+
+    <% @changelogmemo.each{|key, items| %>
+      <% items.each{|item| %>
+        <h2><span class="title">
+          <%= item.get_item_title() %></h2>
+          <p style="text-align: right"><%= item.date.strftime("%Y年%m月%d日 (%A)") %></p>
+
+          <p><%= item.get_item_log() %></p>
+          <% } %>
+          <% } %>
+
+        </div>
+
+        <center class="page">
+          <a href="./index.html">1</a>
+          <% i = 1 %>
+          <% while i < @page_max - 1 do %>
+          <a href="./index<%= i + 1 %>.html"><%= i + 1 %></a>
+          <% i = i + 1 %>
+          <% end %>
+          <p>ページ</p>
+        </center>
