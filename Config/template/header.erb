@@ -6,15 +6,15 @@
   <meta http-equiv="Content-Script-Type" content="text/javascript">
   <meta http-equiv="Last-Modified" content="<%= Time.now().strftime("%Y-%m-%d %H:%M:%S (%A)") %> GMT">
   <meta name="keywords" content="<%= @keyword %> ">
-  <meta name="description" content="<%= @config.home_description() %>">
+  <meta name="description" content="<%= @page.get_description() %>">
 
-  <title>="<%= @config.home_title %>" </title>
-        <link rel="stylesheet" type="text/css" href="image_files/reset-min.css">
-		        <link rel="stylesheet" media="handheld, only screen and (max-width: 767px)" type="text/css" href="image_files/mockup_mobile.css">
-        <link href="image_files/common.css" rel="stylesheet" type="text/css">
+  <title>="<%= @page.get_title() %>" </title>
+        <link rel="stylesheet" type="text/css" href="./../image/reset-min.css">
+		        <link rel="stylesheet" media="handheld, only screen and (max-width: 767px)" type="text/css" href="./../image/mockup_mobile.css">
+        <link href="./../image/common.css" rel="stylesheet" type="text/css">
 		        <link rel="shortcut icon" href="./../images/favicon.ico">
-  
-  <script type="text/javascript" async="" src="image_files/ga.js"></script><script type="text/javascript">
+
+  <script type="text/javascript" async="" src="./../images/ga.js"></script><script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-23234148-1']);
@@ -27,7 +27,7 @@
   })();
 
 </script>
-  
+
     <style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
 .en-markup-crop-options {
     top: 18px !important;
@@ -42,10 +42,8 @@
     margin-left: 0px !important;
 }
 </style>
-		
-		
+
+
   <title><%= @config.home_title %></title>
 
 </head>
-
-

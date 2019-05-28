@@ -1,3 +1,9 @@
+rem del .\Config\*.bak /S
 
+ruby CreateHtml.rb
 
-rem .\lftp\tools\bin\lftp.exe -f ./Config/autoupload.lftp
+rem del .\www\*.bak /S
+
+rem .\lftp\tools\bin\lftp.exe -f .\Config\autoupload.lftp
+
+pause
