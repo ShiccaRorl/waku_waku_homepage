@@ -15,6 +15,10 @@ class CreateHtml
     @body            = File.open("./Config/template/body.erb", 'r:utf-8').read
     @autoupload_lftp = File.open("./Config/autoupload.lftp", 'r:utf-8').read
 
+    @body = @body.scan(/<body>.*?<\/body>/)
+
+
+
     self.keyword()
     self.lftp()
   end
