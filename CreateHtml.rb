@@ -82,22 +82,26 @@ end
 class Page
   def initialize(dir)
     @dir = dir
+    @dir.delete("image")
   end
 
   def get_dir_name()
-    return @dir.sub(/\.\/Config\/template\//, "")
+    return @dir.sub("./Config/template/", "")
   end
 
   def get_title()
-    return ""
+    title = File.open("./Config/template/" + self.get_dir_name + "/title.txt", 'r:utf-8').read
+    return title
   end
 
   def get_description()
-    return ""
+    description = File.open("./Config/template/" + self.get_dir_name + "/description.txt", 'r:utf-8').read
+    return description
   end
 
-  def get_Manuscript()
-return ""
+  def get_manuscript()
+    manuscript = File.open("./Config/template/" + self.get_dir_name + "/manuscript.html", 'r:utf-8').read
+    return manuscript
   end
 end
 
