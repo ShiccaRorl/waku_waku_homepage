@@ -109,6 +109,7 @@ class Page
   end
 end
 
+# ディレクトリ一覧取得
 pages = []
 Dir.glob('./Config/template/*').each{|dir|
   unless Dir.exist?(dir) then
@@ -118,6 +119,30 @@ Dir.glob('./Config/template/*').each{|dir|
   end
 }
 
+=begin
+# wwwの既存のデリク取り一覧取得
+temp_pages = []
+Dir.glob('./www/*').each{|dir|
+  unless Dir.exist?(dir) then
+    #print dir
+  else
+    temp_pages << Page.new(dir)
+  end
+}
+
+pages = pages - temp_pages
+
+# 新しく追加したディレクトリ作成
+pages.each{|page|
+  if Dir.exist?(page.get_dir_name()) then
+
+  else
+    Dir.mkdir("./www/" + page.get_dir_name())
+  end
+}
+=end
+
+# HP作成
 pages.each{|page|
   create_html = CreateHtml.new(page)
   create_html.create_body_index()
