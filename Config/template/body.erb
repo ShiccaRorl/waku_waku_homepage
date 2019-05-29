@@ -8,10 +8,10 @@
               width="452"></a> </h1>
         <div id="right">
           <ul>
-            <li id="index"><a href="http://cscnara.ksaka.net/index.html">トップページ</a></li>
-            <li id="contact"><a href="http://cscnara.ksaka.net/contact.html"></a><br>
+            <li id="index"><%= @config.top_home_page() %></li>
+            <li id="contact"><a href="./contact/index.html"></a><br>
             </li>
-            <li id="menu_sitemap"><a href="http://cscnara.ksaka.net/sitemap.html"
+            <li id="menu_sitemap"><a href="./sitemap/index.html"
 
                 target="_parent"></a><br>
             </li>
@@ -26,45 +26,45 @@
       <div id="column">
         <div id="column_left">
           <ul id="sub_menu">
-            <li id="outline"><a href="http://cscnara.ksaka.net/outline.html" target="_parent">団
+            <li id="outline"><a href="./outline/index.html" target="_parent">団
                 体概要</a></li>
-            <li id="admission"><a href="http://cscnara.ksaka.net/admission.html"
+            <li id="admission"><a href="./admission/index.html"
 
                 target="_parent">ご支援・入会のご案内</a></li>
-            <li id="link"><a href="http://cscnara.ksaka.net/link.html">リンク集</a></li>
+            <li id="link"><a href="./link/index.html">リンク集</a></li>
           </ul>
           <ul id="glo_menu">
-            <li id="school"><a href="http://cscnara.ksaka.net/school.html" target="_parent">職
+            <li id="school"><a href="./school/index.html" target="_parent">職
                 業訓練・CSスクール</a></li>
-            <li id="pasokon"><a href="http://cscnara.ksaka.net/pasokonn.html" target="_parent">パ
+            <li id="pasokon"><a href="./pasokonn/index.html" target="_parent">パ
                 ソコンなら青年おたすけ隊</a></li>
-            <li id="counseling"><a href="http://cscnara.ksaka.net/counseling.html"
+            <li id="counseling"><a href="./counseling/index.html"
 
                 target="_parent">相談・カウンセリング</a></li>
-            <li id="circle"><a href="http://cscnara.ksaka.net/circle.html" target="_parent">ニー
+            <li id="circle"><a href="./circle/index.html" target="_parent">ニー
                 ト脱出サークル</a></li>
           </ul>
           <!-- 原稿--> <%= @page.get_manuscript() %>
           <!-- 原稿-->
           <div id="index_bottom_news">
             <div id="index_news">
-              <p><a href="http://cscnara.ksaka.net/circle.html">ニート脱出サークル説明会開催</a></p>
+              <p><a href="./circle/index.html">ニート脱出サークル説明会開催</a></p>
             </div>
           </div>
         </div>
         <div id="column_right">
           <!--ここから--> <br>
           <div id="banner_zone">
-            <div id="banner_hikikomori"> <a href="http://cscnara.ksaka.net/kazokukai.html"
+            <div id="banner_hikikomori"> <a href="./kazokukai/index.html"
 
                 target="_parent"><img src="./../image/menu_1.PNG" alt="平成30年ひきこもりセミナー"><!--家族の会--></a>
-              <a href="http://cscnara.ksaka.net/honninkai.html" target="_parent"><img
+              <a href="./honninkai/index.html" target="_parent"><img
 
                   src="./../image/menu_2.png" alt="平成30年ひきこもりセミナー"><!--家族の会--></a>
             </div>
             <p id="banner_chukan"><!--<img src="images/290728.png" width="100%">--><a
 
-                href="http://cscnara.ksaka.net/chukansyurou.html" target="_parent"><img src="./../image/menu_3.png" alt="平成30年若年就職困難者職場実習等"><!--中間就労--></a></p>
+                href="./chukansyurou/index.html" target="_parent"><img src="./../image/menu_3.png" alt="平成30年若年就職困難者職場実習等"><!--中間就労--></a></p>
             <p id="banner_jiritu"><!--子供の自立 パンフレット--> <br>
             </p>
             <p id="banner_blog"><a href="http://cscnara.blog.jp/"><img src="./../image/menu_4.png" alt="毎日ブログ">blog</a></p>
@@ -83,15 +83,15 @@
           </div>
           <div id="whatsnew">
             <ul>
-              <li><a href="http://cscnara.ksaka.net/chukansyurou.html">奈良県委託『若年就
+              <li><a href="./chukansyurou/index.html">奈良県委託『若年就
                   職困難者職場実習等ｻﾎﾟｰﾄ事業』<br>
                   15～39才で就職に不安を抱える未就労者の方へのサポート事業です<br>
                   参加者募集中</a></li>
-              <li><a href="http://cscnara.ksaka.net/circle.html">H29『子ども・若者支援サーク
+              <li><a href="./circle/index.html">H29『子ども・若者支援サーク
                   ル』<br>
                   ニート・ひきこもりからの自立支援<br>
                   参加者募集中</a></li>
-              <li><a href="http://cscnara.ksaka.net/Questionnaire.html" target="_blank">貴
+              <li><a href="./Questionnaire/index.html" target="_blank">貴
                   社が求める人材に関するアンケートお願い</a></li>
             </ul>
           </div>
@@ -99,19 +99,15 @@
             <li id="title2"><img src="./../image/side_title.jpg" alt="CSスクール" height="109"
 
                 width="240"></li>
-            <li><a href="http://cscnara.ksaka.net/school.html" target="_parent">本
+            <li><a href="./school/index.html" target="_parent">本
                 部・橿原新ノ口校</a></li>
-            <li><a href="http://cscnara.ksaka.net/school.html" target="_parent">奈
-                良大安寺校</a></li>
           </ul>
-          <div id="side_computer">
+          <div>
             <p>パソコンのトラブル<br>
               相談はこちらへ</p>
             <a href="http://otasuke6776.web.fc2.com/index.html" target="_blank"><img
 
-                src="./../image/menu_7.png" alt="パソコンなら青年お助け隊" height="136"
-
-                width="141"></a> </div>
+                src="./../image/menu_7.png" alt="パソコンなら青年お助け隊"></a> </div>
         </div>
         <!--ここまで--> </div>
       <div id="foot_link">
