@@ -17,7 +17,7 @@
 	padding-right: 0px;
 	/*padding-bottom: 10px;*/
 	padding-left: 20px;
-	background-image: url(images/line_orange.jpg);
+	background-image: url(./../image/line_orange.jpg);
 	background-repeat: repeat-x;
 	line-height: 40px;
 	/*background-position:60px;*/
@@ -43,7 +43,7 @@
 #header {
 	margin: 0px;
 	padding: 0px;
-	background-image: url(images/line_blue.jpg);
+	background-image: url(./../image/line_blue.jpg);
 	background-repeat: repeat-x;
 	background-position: bottom;
 	width: 950px;
@@ -84,7 +84,7 @@
 #header #right ul #contact {
 	height: 20px;
 	width: 59px;
-	background-image: url(images/contact.jpg);
+	background-image: url(./../image/contact.jpg);
 	background-position: center top;
 	background-repeat: no-repeat;
 	display: block;
@@ -147,7 +147,7 @@
 
 
 #header #right ul #menu_sitemap {
-	background-image: url(images/sitemap.jpg);
+	background-image: url(./../image/sitemap.jpg);
 	background-repeat: no-repeat;
 	background-position: center top;
 	display: block;
@@ -162,7 +162,7 @@
 #header #right ul #menu_sitemap a {
 	height: 20px;
 	width: 89px;
-	background-image: url(images/sitemap.jpg);
+	background-image: url(./../image/sitemap.jpg);
 	background-repeat: no-repeat;
 	background-position: center top;
 	display: block;
@@ -173,7 +173,7 @@
 #header #right ul #menu_sitemap a:hover {
 	height: 20px;
 	width: 89px;
-	background-image: url(images/sitemap.jpg);
+	background-image: url(./../image/sitemap.jpg);
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	display: block;
@@ -230,7 +230,7 @@
 	float: left;
 }
 #column_left #sub_menu #outline a{
-	background-image: url(images/menu_outline.jpg);
+	background-image: url(./../image/menu_outline.jpg);
 	background-repeat: no-repeat;
 	background-position: center top;
 	height: 35px;
@@ -239,7 +239,7 @@
 	width: 70px;
 }
 #column_left #sub_menu #outline a:hover {
-	background-image: url(images/menu_outline.jpg);
+	background-image: url(./../image/menu_outline.jpg);
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	height: 35px;
@@ -249,7 +249,7 @@
 }
 
 #column_left #sub_menu #admission a{
-	background-image: url(images/menu_admission.jpg);
+	background-image: url(./../image/menu_admission.jpg);
 	background-repeat: no-repeat;
 	background-position: center top;
 	height: 35px;
@@ -270,7 +270,7 @@
 
 
 #column_left #sub_menu #admission a:hover {
-	background-image: url(images/menu_admission.jpg);
+	background-image: url(./../image/menu_admission.jpg);
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	height: 35px;
@@ -282,7 +282,7 @@
 }
 
 #column_left #sub_menu #link a{
-	background-image: url(images/menu_link.jpg);
+	background-image: url(./../image/menu_link.jpg);
 	background-repeat: no-repeat;
 	background-position: center top;
 	height: 35px;
@@ -291,7 +291,7 @@
 	text-indent: -999999px;
 }
 #column_left #sub_menu #link a:hover {
-	background-image: url(images/menu_link.jpg);
+	background-image: url(./../image/menu_link.jpg);
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	height: 35px;
@@ -306,7 +306,7 @@
 	padding: 0px;
 	height: 60px;
 	width: 600px;
-	background-image: url(images/menu_background.jpg);
+	background-image: url(./../image/menu_background.jpg);
 	background-repeat: repeat-x;
 	clear: both;
 }
@@ -322,7 +322,7 @@
 	margin: 0px;
 	height: 60px;
 	width: 99px;
-	background-image: url(images/menu_csschool.jpg);
+	background-image: url(./../image/menu_csschool.jpg);
 	display: block;
 	background-position: center top;
 	padding: 0px;
@@ -332,7 +332,7 @@
 	margin: 0px;
 	height: 60px;
 	width: 99px;
-	background-image: url(images/menu_csschool.jpg);
+	background-image: url(./../image/menu_csschool.jpg);
 	display: block;
 	background-position: center bottom;
 	padding: 0px;
@@ -346,7 +346,7 @@
 	padding-left: 0px;
 	height: 60px;
 	width: 103px;
-	background-image: url(images/menu_computer.jpg);
+	background-image: url(./../image/menu_computer.jpg);
 	display: block;
 	background-repeat: no-repeat;
 	background-position: center top;
@@ -360,7 +360,7 @@
 	padding-left: 0px;
 	height: 60px;
 	width: 103px;
-	background-image: url(images/menu_computer.jpg);
+	background-image: url(./../image/menu_computer.jpg);
 	display: block;
 	background-repeat: no-repeat;
 	background-position: center bottom;
@@ -370,7 +370,7 @@
 	margin: 0px;
 	height: 60px;
 	width: 118px;
-	background-image: url(images/menu_Counseling.jpg);
+	background-image: url(./../image/menu_Counseling.jpg);
 	background-position: center top;
 	display: block;
 	padding: 0px;
@@ -380,7 +380,7 @@
 	margin: 0px;
 	height: 60px;
 	width: 118px;
-	background-image: url(images/menu_Counseling.jpg);
+	background-image: url(./../image/menu_Counseling.jpg);
 	background-position: center bottom;
 	display: block;
 	padding: 0px;
@@ -390,7 +390,7 @@
 	margin: 0px;
 	height: 60px;
 	width: 86px;
-	background-image: url(images/menu_circle.jpg);
+	background-image: url(./../image/menu_circle.jpg);
 	background-position: center top;
 	display: block;
 	padding: 0px;
@@ -400,7 +400,7 @@
 	margin: 0px;
 	height: 60px;
 	width: 86px;
-	background-image: url(images/menu_circle.jpg);
+	background-image: url(./../image/menu_circle.jpg);
 	background-position: center bottom;
 	display: block;
 	padding: 0px;
@@ -570,7 +570,7 @@
 	padding: 0px;
 	height: 99px;
 	width: 240px;
-	background-image: url(images/jiritu.jpg);
+	background-image: url(./../image/jiritu.jpg);
 	background-repeat: no-repeat;
 	background-position: center top;
 	margin-top: 20px;
@@ -583,7 +583,7 @@
 }
 
 #banner_zone #banner_jiritu a:hover {
-	background-image: url(images/jiritu.jpg);
+	background-image: url(./../image/jiritu.jpg);
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	padding: 0px;
@@ -598,7 +598,7 @@
 	text-indent: -9999px;
 }
 #banner_zone #banner_jiritu a:active {
-	background-image: url(images/jiritu.jpg);
+	background-image: url(./../image/jiritu.jpg);
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	padding: 0px;
@@ -616,7 +616,7 @@
 	padding: 0px;
 	height: 198px;
 	width: 240px;
-	background-image: url(images/banner_chukan.jpg);
+	background-image: url(./../image/banner_chukan.jpg);
 	background-repeat: no-repeat;
 	background-position: center top;
 	margin-top: 5px;
@@ -635,7 +635,7 @@ content:"28年度の中間的就労サポート事業は終了致しました。
 	padding: 0px;
 	height: 198px;
 	width: 240px;
-	background-image: url(images/29nen9gatu.png);
+	background-image: url(./../image/29nen9gatu.png);
 	background-repeat: no-repeat;
 	background-position: center top;
 	margin-top: 5px;
@@ -651,7 +651,7 @@ content:"28年度の中間的就労サポート事業は終了致しました。
 	padding: 0px;
 	height: 198px;
 	width: 240px;
-	background-image: url(images/29nen9gatu.png);
+	background-image: url(./../image/29nen9gatu.png);
 	background-repeat: no-repeat;
 	background-position: center top;
 	margin-top: 5px;
@@ -666,7 +666,7 @@ content:"28年度の中間的就労サポート事業は終了致しました。
 	padding: 0px;
 	height: 98px;
 	width: 240px;
-	background-image: url(images/blog.jpg);
+	background-image: url(./../image/blog.jpg);
 	background-repeat: no-repeat;
 	background-position: center top;
 	margin-top: 5x;
@@ -681,7 +681,7 @@ content:"28年度の中間的就労サポート事業は終了致しました。
 	padding: 0px;
 	height: 98px;
 	width: 240px;
-	background-image: url(images/blog.jpg);
+	background-image: url(./../image/blog.jpg);
 	background-repeat: no-repeat;
 	background-position: center top;
 	margin-top: 5x;
@@ -696,7 +696,7 @@ content:"28年度の中間的就労サポート事業は終了致しました。
 	padding: 0px;
 	height: 98px;
 	width: 240px;
-	background-image: url(images/blog.jpg);
+	background-image: url(./../image/blog.jpg);
 	background-repeat: no-repeat;
 	background-position: center top;
 	margin-top: 5x;
@@ -733,7 +733,7 @@ content:"28年度の中間的就労サポート事業は終了致しました。
 
 
 #column_right #whatsnew {
-	background-image: url(images/side_whatsnew.jpg);
+	background-image: url(./../image/side_whatsnew.jpg);
 	background-repeat: no-repeat;
 	background-position: top;
 	padding-top: 0px;
@@ -859,7 +859,7 @@ content:"28年度の中間的就労サポート事業は終了致しました。
 #foot_wrapper {
 	margin: 0px;
 	padding: 0px;
-	background-image: url(images/footer_back.jpg);
+	background-image: url(./../image/footer_back.jpg);
 	background-repeat: repeat-x;
 	clear: both;
 }
@@ -1056,7 +1056,7 @@ content:"28年度の中間的就労サポート事業は終了致しました。
 	padding: 0px;
 	height: 241px;
 	width: 513px;
-	background-image: url(images/circle2_info.jpg);
+	background-image: url(./../image/circle2_info.jpg);
 	background-position: center top;
 	text-indent: -9999px;
 	background-repeat: no-repeat;
@@ -1152,7 +1152,7 @@ dl{
 	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 	font-size: 0.8em;
 }
-		
+
 dl dt {
 	padding-left:15px;
 	padding-bottom:8px;
@@ -1161,5 +1161,3 @@ dl dt {
 dl dd{
 	padding-left:25px;
 }
-		
-		

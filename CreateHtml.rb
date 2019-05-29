@@ -5,7 +5,7 @@ require "./Config/Config"
 
 
 class CreateHtml
-  attr_accessor :keyword, :css_theme_path, :link, :hiduke, :day, :title, :config, :page, :page_max, :changelogmemo, :calendar
+  attr_accessor :keyword, :link, :hiduke, :day, :title, :config, :page
   def initialize(page)
     @config = Config.new()
     @page = page
@@ -45,7 +45,7 @@ class CreateHtml
     begin
       File.write("./www/" + @page.get_dir_name + "/" + "index.html", @html)
     rescue
-      print "書き込みエラー\n"
+      print "書き込みエラー\n" + @page.get_dir_name + "\n"
     end
 
   end
@@ -56,17 +56,17 @@ class CreateHtml
     body = @body.gsub("./../image", "./image")
     footer = @footer.gsub("./../image", "./image")
 
-    @html = header + body + footer
+    html = header + body + footer
     #p changelogmemo
 
-    erb = ERB.new(@html)
+    erb = ERB.new(html)
 
-    @html = erb.result(binding)
+    html = erb.result(binding)
 
     begin
-      File.write("./www/" + "index.html", @html)
+      File.write("./www/" + "index.html", html)
     rescue
-      print "書き込みエラー\n"
+      print "書き込みエラー\n" + @page.get_dir_name + "\n"
     end
   end
 
@@ -93,17 +93,17 @@ class Page
   end
 
   def get_title()
-    title = File.open("./Config/template/" + self.get_dir_name + "/title.txt", 'r:utf-8').read
+    title = File.open(@dir + "/title.txt", 'r:utf-8').read
     return title
   end
 
   def get_description()
-    description = File.open("./Config/template/" + self.get_dir_name + "/description.txt", 'r:utf-8').read
+    description = File.open(@dir + "/description.txt", 'r:utf-8').read
     return description
   end
 
   def get_manuscript()
-    manuscript = File.open("./Config/template/" + self.get_dir_name + "/manuscript.html", 'r:utf-8').read
+    manuscript = File.open(@dir + "/manuscript.html", 'r:utf-8').read
     return manuscript
   end
 end
@@ -118,6 +118,8 @@ Dir.glob('./Config/template/*').each{|dir|
   end
 }
 
+
+=begin
 i = []
 pages.each{|page|
   if page.get_dir_name() != "image" then
@@ -126,7 +128,7 @@ pages.each{|page|
 }
 pages = i
 
-=begin
+
 # wwwの既存のデリク取り一覧取得
 temp_pages = []
 Dir.glob('./www/*').each{|dir|

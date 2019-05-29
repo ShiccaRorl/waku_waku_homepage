@@ -2,7 +2,7 @@ rem del .\Config\*.bak /S
 
 ruby CreateHtml.rb
 
-copy .\Config\template\index.html .\www\
+rem copy .\Config\template\index.html .\www\
 
 rem del .\www\*.bak /S
 
