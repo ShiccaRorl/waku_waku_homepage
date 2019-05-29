@@ -52,11 +52,11 @@ class CreateHtml
 
   def create_body_index()
     # くっつける
-    header = @header.gsub("./../image", "./image")
-    body = @body.gsub("./../image", "./image")
-    footer = @footer.gsub("./../image", "./image")
+    #header = @header.gsub("./../image", "./image")
+    #body = @body.gsub("./../image", "./image")
+    #footer = @footer.gsub("./../image", "./image")
 
-    html = header + body + footer
+    html = @header + @body + @footer
     #p changelogmemo
 
     erb = ERB.new(html)
