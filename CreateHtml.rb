@@ -10,6 +10,9 @@ class CreateHtml
     @config = Config.new()
     @page = page
 
+    @doctype = "<!doctype html>
+    <html>"
+
     @header          = File.open("./Config/template/index/header.html", 'r:utf-8').read
     @footer          = File.open("./Config/template/index/footer.html", 'r:utf-8').read
     @body            = File.open("./Config/template/index/body.html", 'r:utf-8').read
@@ -18,7 +21,7 @@ class CreateHtml
     # bodyだけを取り出す。
     @body.gsub!("\n", "")
 
-    i = @body.match(/<body.*?>(.*?)<\/body>/m)
+    i = @body.match(/(<body.*?>.*?<\/body>)/m)
     if $1 == nil then
       print @page.get_dir_name() + " body " + "\n"
       @body = ""
@@ -27,7 +30,7 @@ class CreateHtml
     end
 
     # ヘッダを取り出す。
-    i = @header.match(/<head.*?>(.*?)<\/head>/m)
+    i = @header.match(/(<head.*?>.*?<\/head>)/m)
     if $1 == nil then
       print @page.get_dir_name() + " header " + "\n"
       @header = ""
@@ -53,7 +56,7 @@ class CreateHtml
   def create_body()
     # くっつける
 
-    @html = @header + @body + @footer
+    @html = @doctype + @header + @body + @footer
     #p changelogmemo
 
     @html.gsub!("&lt;", "<")
@@ -78,7 +81,7 @@ class CreateHtml
     #body = @body.gsub("./../image", "./image")
     #footer = @footer.gsub("./../image", "./image")
 
-    html = @header + @body + @footer
+    html = @doctype + @header + @body + @footer
     #p changelogmemo
 
     html.gsub!("&lt;", "<")
