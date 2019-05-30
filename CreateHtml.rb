@@ -56,6 +56,10 @@ class CreateHtml
     @html = @header + @body + @footer
     #p changelogmemo
 
+    @html.gsub!("&lt;", "<")
+    @html.gsub!("&gt;", ">")
+
+
     erb = ERB.new(@html)
 
     @html = erb.result(binding)
@@ -76,6 +80,9 @@ class CreateHtml
 
     html = @header + @body + @footer
     #p changelogmemo
+
+    html.gsub!("&lt;", "<")
+    html.gsub!("&gt;", ">")
 
     erb = ERB.new(html)
 
