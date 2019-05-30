@@ -10,15 +10,33 @@ class CreateHtml
     @config = Config.new()
     @page = page
 
-    @header          = File.open("./Config/template/header.erb", 'r:utf-8').read
-    @footer          = File.open("./Config/template/footer.erb", 'r:utf-8').read
-    @body            = File.open("./Config/template/body.erb", 'r:utf-8').read
+    @header          = File.open("./Config/template/index/header.html", 'r:utf-8').read
+    @footer          = File.open("./Config/template/index/footer.html", 'r:utf-8').read
+    @body            = File.open("./Config/template/index/body.html", 'r:utf-8').read
     @autoupload_lftp = File.open("./Config/autoupload.lftp", 'r:utf-8').read
 
     # bodyだけを取り出す。
-    #@body = @body.scan(/<body>*<\/body>/m)[0]
+    @body.gsub!("\n", "")
 
+    i = @body.match(/<body.*?>(.*?)<\/body>/m)
+    if $1 == nil then
+      print @page.get_dir_name() + " body " + "\n"
+      @body = ""
+    else
+      @body = $1
+    end
 
+    # ヘッダを取り出す。
+    i = @header.match(/<head.*?>(.*?)<\/head>/m)
+    if $1 == nil then
+      print @page.get_dir_name() + " header " + "\n"
+      @header = ""
+    else
+      @header = $1
+    end
+    # フッターを取り出す。
+    #@footer.scan(/<footer.*?>(*)<\/footer>/m)
+    #@footer = $1
 
     self.keyword()
     self.lftp()
@@ -102,9 +120,11 @@ class Page
     return description
   end
 
-  def get_manuscript()
-    manuscript = File.open(@dir + "/manuscript.html", 'r:utf-8').read
-    return manuscript
+  def get_index()
+    index = File.open(@dir + "/index.html", 'r:utf-8').read
+    index.scan(/<body.*?>(.*?)<\/body>/m)
+    index = $1
+    return index
   end
 end
 
@@ -119,37 +139,6 @@ Dir.glob('./Config/template/*').each{|dir|
 }
 
 
-=begin
-i = []
-pages.each{|page|
-  if page.get_dir_name() != "image" then
-    i << page.get_dir_name()
-  end
-}
-pages = i
-
-
-# wwwの既存のデリク取り一覧取得
-temp_pages = []
-Dir.glob('./www/*').each{|dir|
-unless Dir.exist?(dir) then
-#print dir
-else
-temp_pages << Page.new(dir)
-end
-}
-
-pages = pages. - temp_pages
-
-# 新しく追加したディレクトリ作成
-pages.each{|page|
-if Dir.exist?(page.get_dir_name()) then
-
-else
-Dir.mkdir("./www/" + page.get_dir_name())
-end
-}
-=end
 
 # HP作成
 pages.each{|page|
