@@ -8,6 +8,6 @@ copy .\www\index\index.html .\www\
 rem del .\www\*.bak /S
 
 
- .\lftp\tools\bin\lftp.exe -f .\Config\autoupload.lftp
+lftp.exe -f .\Config\autoupload.lftp
 
 pause

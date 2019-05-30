@@ -1,3 +1,12 @@
 https://github.com/ShiccaRorl/waku_waku_homepage.git
 
 https://nyanmonaito.web.fc2.com/
+
+Install Chocolately
+
+@powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
+
+Install LFTP
+
+Now you can install lftp with
+choco install lftp
