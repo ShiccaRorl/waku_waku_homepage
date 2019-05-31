@@ -10,3 +10,11 @@ Install LFTP
 
 Now you can install lftp with
 choco install lftp
+
+
+
+<div class="demo04">
+	<a href="#">
+		<img src="img/btn_sample.png" width="200" height="60" alt="ƒTƒ“ƒvƒ‹" onmouseover="this.src='img/btn_sample_over.png'" onmouseout="this.src='img/btn_sample.png'">
+	</a>
+</div>
