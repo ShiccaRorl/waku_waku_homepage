@@ -208,7 +208,7 @@
 
 #wrapper #column_left {
 	float: left;
-	margin: 12px;
+	margin: 0px;
 	padding-top: 20px;
 	padding-right: 30px;
 	padding-left: 30px;
@@ -565,52 +565,6 @@
 #column_right #banner_zone {
 	padding: 0px;
 	margin: 0px;
-}
-#banner_zone #banner_jiritu a:link {
-	padding: 0px;
-	height: 99px;
-	width: 240px;
-	background-image: url(./../image/jiritu.jpg);
-	background-repeat: no-repeat;
-	background-position: center top;
-	margin-top: 20px;
-	margin-right: auto;
-	margin-bottom: 0px;
-	margin-left: auto;
-	display: block;
-	overflow: hidden;
-	text-indent: -9999px;
-}
-
-#banner_zone #banner_jiritu a:hover {
-	background-image: url(./../image/jiritu.jpg);
-	background-repeat: no-repeat;
-	background-position: center bottom;
-	padding: 0px;
-	height: 99px;
-	width: 240px;
-	margin-top: 20px;
-	margin-right: auto;
-	margin-bottom: 0px;
-	margin-left: auto;
-	display: block;
-	overflow: hidden;
-	text-indent: -9999px;
-}
-#banner_zone #banner_jiritu a:active {
-	background-image: url(./../image/jiritu.jpg);
-	background-repeat: no-repeat;
-	background-position: center bottom;
-	padding: 0px;
-	height: 99px;
-	width: 240px;
-	margin-top: 20px;
-	margin-right: auto;
-	margin-bottom: 0px;
-	margin-left: auto;
-	display: block;
-	overflow: hidden;
-	text-indent: -9999;
 }
 #banner_zone #banner_chukan  a:hover{/*
 	padding: 0px;

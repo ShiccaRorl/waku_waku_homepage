@@ -21,7 +21,7 @@ class CreateHtml
     # bodyだけを取り出す。
     @body.gsub!("\n", "")
 
-    i = @body.match(/(<body.*?>.*?<\/body>)/m)
+    i = @body.match(/(<body.*?>(.*?)<\/body>)/m)
     if $1 == nil then
       print @page.get_dir_name() + " body " + "\n"
       @body = ""
@@ -30,7 +30,7 @@ class CreateHtml
     end
 
     # ヘッダを取り出す。
-    i = @header.match(/(<head.*?>.*?<\/head>)/m)
+    i = @header.match(/(<head.*?>(.*?)<\/head>)/m)
     if $1 == nil then
       print @page.get_dir_name() + " header " + "\n"
       @header = ""
