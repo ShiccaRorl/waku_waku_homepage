@@ -6,11 +6,27 @@
     <body class="page"> 
         <div id="wrapper"> 
             <!-- ヘッダ部分 -->             
-            <div id="header"> 
-                <h1 id="title"> <a href="http://cscnara.ksaka.net/index.html" target="_parent"> 
-                        <img src="./../image/main_logo.jpg" alt="NPO法人キャリアサポートセンター奈良" height="112" width="452"> 
-                    </a> </h1> 
-                <table border="0"> 
+            <div id="header">
+                <h1 id="title"> <a href="index.html" target="_parent">
+                        <img src="../image/main_logo.jpg" width="452" height="112" alt="NPO法人キャリアサポートセンター奈良"/>
+                    </a> </h1>
+                <div id="right">
+                    <ul>
+                        <li id="">
+                            <a href="index.html">トップページ</a>
+                        </li>
+                        <br>
+                        <li id="">
+                            <a href="contact.html">お問い合わせ</a>
+                        </li>
+                    </ul>
+                    <p>本部：橿原新ノ口校<br/>
+        奈良県橿原市葛本町307-12　アメニティ24-20A<br/>
+        TEL&amp;FAX:0744-29-6776<br/>
+        メールアドレス : npo-cscnara@celery.ocn.ne.jp</p>
+                </div>
+                <h2>求職者支援訓練、パソコンの技術提供、指導を通じて、就業のあらゆる問題をサポートします。</h2>
+                <table border="0" id="column_left"> 
                     <tbody> 
                         <tr> 
                             <td><b> <a href="./../school/index.html"> 
@@ -43,7 +59,7 @@
             <div id="column"> 
                 <div id="column_left"> 
                     &nbsp;
-                    <!-- 原稿-->                                                             &lt;%= @page.get_index() %&gt;
+                    <!-- 原稿-->                                                                                                                                                                                                                                                                                                                                                                                                                                         &lt;%= @page.get_index() %&gt;
                     <!-- 原稿-->                     
                     <div id="index_bottom_news"> 
                         <div id="index_news"> 
