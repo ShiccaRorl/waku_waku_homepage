@@ -582,8 +582,9 @@
     margin: 0px;
 }
 
-#banner_zone #banner_chukan  a:hover {
     /*
+#banner_zone #banner_chukan  a:hover {
+
 	padding: 0px;
 	height: 198px;
 	width: 240px;
@@ -596,8 +597,9 @@
 	margin-left: auto;
 	display: block;
 	overflow: hidden;
-	text-indent: -9999px;*/
+	text-indent: -9999px;
 }
+*/
 
 #banner_chukan:after {
     /*
