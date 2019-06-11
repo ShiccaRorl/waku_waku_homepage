@@ -54,7 +54,7 @@ class CreateHtml
 
   def create_body_index()
     # くっつける
-    @page.html = @page.html.gsub("./../image", "./image")
+  
     #body = @body.gsub("./../image", "./image")
     #footer = @footer.gsub("./../image", "./image")
 
@@ -67,6 +67,10 @@ class CreateHtml
     erb = ERB.new(html)
 
     html = erb.result(binding)
+
+
+    @page.html = @page.html.gsub("./../image", "./image")
+    #@page.html = @page.html.gsub("../image", "./image")
 
     begin
       File.write("./www/" + "index.html", html)
