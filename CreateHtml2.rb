@@ -69,7 +69,7 @@ class CreateHtml
     html = erb.result(binding)
 
 
-    @page.html = @page.html.gsub("./../image", "./image")
+    html = html.gsub("./../image", "./image")
     #@page.html = @page.html.gsub("../image", "./image")
 
     begin
