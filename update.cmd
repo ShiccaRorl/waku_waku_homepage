@@ -1,9 +1,9 @@
-del .\Config\*.bak /S
+del .\contents\*.bak /S
 
 ruby CreateHtml2.rb
 
-copy .\Config\template\image\*.* .\www\image\
-copy .\www\index\index.html .\www\
+rem copy .\Config\template\image\*.* .\www\image\
+rem copy .\www\index\index.html .\www\
 
 del .\www\*.bak /S
 
