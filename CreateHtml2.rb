@@ -15,14 +15,91 @@ class CreateHtml
 
     @doctype2 = "</html>"
 
+    @autoupload_lftp = File.open("./Config/autoupload.lftp", 'r:utf-8').read
+
+
+    self.keyword()
+    self.lftp()
+  end
+
+  def keyword()
+    @keyword = ""
+    @config.home_category.each{|key|
+      @keyword = "#{@keyword}, " + "#{key}"
+    }
+    return @keyword.encode!("UTF-8")
+  end
+
+  def create_body()
+    # くっつける
+
+    @html = @doctype + @page.html + @doctype2
+    #p changelogmemo
+
+    @html.gsub!("&lt;", "<")
+    @html.gsub!("&gt;", ">")
+
+
+    erb = ERB.new(@html)
+
+    @html = erb.result(binding)
+
+    begin
+      File.write("./www/" + @page.get_dir_name + "/" + "index.html", @html)
+    rescue
+      print "書き込みエラー\n" + @page.get_dir_name + "\n"
+    end
+
+  end
+
+  def create_body_index()
+    # くっつける
+    @page.html = @page.html.gsub("./../image", "./image")
+    #body = @body.gsub("./../image", "./image")
+    #footer = @footer.gsub("./../image", "./image")
+
+    html = @doctype + @page.html + @doctype2
+    #p changelogmemo
+
+    html.gsub!("&lt;", "<")
+    html.gsub!("&gt;", ">")
+
+    erb = ERB.new(html)
+
+    html = erb.result(binding)
+
+    begin
+      File.write("./www/" + "index.html", html)
+    rescue
+      print "書き込みエラー\n" + @page.get_dir_name + "\n"
+    end
+  end
+
+  def lftp()
+    erb = ERB.new(@autoupload_lftp)
+    lftp = erb.result(binding)
+
+    begin
+      File.write("./Config/autoupload.lftp", lftp)
+    rescue
+      print "書き込みエラー\n"
+    end
+  end
+
+end
+
+class Page
+  attr_accessor :head, :header, :nav, :aside, :footer, :html
+  def initialize(dir)
+    @dir = dir
     @head            = File.open("./template/head.html", 'r:utf-8').read
     @header          = File.open("./template/header.html", 'r:utf-8').read
     @nav             = File.open("./template/nav.html", 'r:utf-8').read
     @aside           = File.open("./template/aside.html", 'r:utf-8').read
-    #@article         = File.open("./template/article.html", 'r:utf-8').read
     @footer          = File.open("./template/footer.html", 'r:utf-8').read
-    @body            = File.open("./template/body.html", 'r:utf-8').read
-    @autoupload_lftp = File.open("./Config/autoupload.lftp", 'r:utf-8').read
+    
+    @html            = File.open("./template/html.html", 'r:utf-8').read
+    
 
     # メタheadを取り出す
     i = @head.match(/<head.*?>(.*?)<\/head>/m)
@@ -71,88 +148,16 @@ class CreateHtml
 
 
     # ボディを取り出す
-    i = @body.match(/<body.*?>(.*?)<\/body>/m)
+    i = @html.match(/<html.*?>(.*?)<\/html>/m)
     if $1 == nil then
-      print "読み込みエラー body" + @page.get_dir_name() + "\n"
-      @body = ""
+      print "読み込みエラー html" + @page.get_dir_name() + "\n"
+      @html = ""
     else
-      @body = $1
+      @html = $1
     end
 
 
-    self.keyword()
-    self.lftp()
-  end
-
-  def keyword()
-    @keyword = ""
-    @config.home_category.each{|key|
-      @keyword = "#{@keyword}, " + "#{key}"
-    }
-    return @keyword.encode!("UTF-8")
-  end
-
-  def create_body()
-    # くっつける
-
-    @html = @doctype + @header + @body + @footer + @doctype2
-    #p changelogmemo
-
-    @html.gsub!("&lt;", "<")
-    @html.gsub!("&gt;", ">")
-
-
-    erb = ERB.new(@html)
-
-    @html = erb.result(binding)
-
-    begin
-      File.write("./www/" + @page.get_dir_name + "/" + "index.html", @html)
-    rescue
-      print "書き込みエラー\n" + @page.get_dir_name + "\n"
-    end
-
-  end
-
-  def create_body_index()
-    # くっつける
-    #header = @header.gsub("./../image", "./image")
-    #body = @body.gsub("./../image", "./image")
-    #footer = @footer.gsub("./../image", "./image")
-
-    html = @doctype + @header + @body + @footer + @doctype2
-    #p changelogmemo
-
-    html.gsub!("&lt;", "<")
-    html.gsub!("&gt;", ">")
-
-    erb = ERB.new(html)
-
-    html = erb.result(binding)
-
-    begin
-      File.write("./www/" + "index.html", html)
-    rescue
-      print "書き込みエラー\n" + @page.get_dir_name + "\n"
-    end
-  end
-
-  def lftp()
-    erb = ERB.new(@autoupload_lftp)
-    lftp = erb.result(binding)
-
-    begin
-      File.write("./Config/autoupload.lftp", lftp)
-    rescue
-      print "書き込みエラー\n"
-    end
-  end
-
-end
-
-class Page
-  def initialize(dir)
-    @dir = dir
+self.create_html()
   end
 
   def get_dir_name()
@@ -175,6 +180,23 @@ class Page
     article = $1
     return article
   end
+
+  def create_html()
+    # くっつける
+
+    #@html = @doctype + @header + @body + @footer + @doctype2
+    #p changelogmemo
+
+    @html.gsub!("&lt;", "<")
+    @html.gsub!("&gt;", ">")
+
+
+    erb = ERB.new(@html)
+
+    @html = erb.result(binding)
+
+  end
+
 end
 
 # ディレクトリ一覧取得
@@ -193,5 +215,5 @@ Dir.glob('./contents/*').each{|dir|
 pages.each{|page|
   create_html = CreateHtml.new(page)
   create_html.create_body_index()
-  create_html.create_body()
+  # create_html.create_body()
 }
