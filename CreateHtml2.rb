@@ -15,38 +15,70 @@ class CreateHtml
 
     @doctype2 = "</html>"
 
-    @header          = File.open("./Config/template/index/header.html", 'r:utf-8').read
-    @footer          = File.open("./Config/template/index/footer.html", 'r:utf-8').read
-    @body            = File.open("./Config/template/index/body.html", 'r:utf-8').read
+    @head            = File.open("./template/head.html", 'r:utf-8').read
+    @header          = File.open("./template/header.html", 'r:utf-8').read
+    @nav             = File.open("./template/nav.html", 'r:utf-8').read
+    @aside           = File.open("./template/aside.html", 'r:utf-8').read
+    #@article         = File.open("./template/article.html", 'r:utf-8').read
+    @footer          = File.open("./template/footer.html", 'r:utf-8').read
+    @body            = File.open("./template/body.html", 'r:utf-8').read
     @autoupload_lftp = File.open("./Config/autoupload.lftp", 'r:utf-8').read
 
-    # bodyだけを取り出す。
-    #@body.gsub!("\n", "")
-
-    i = @body.match(/(<body.*?>.*?)<\/body>/m)
+    # メタheadを取り出す
+    i = @head.match(/<head.*?>(.*?)<\/head>/m)
     if $1 == nil then
-      print @page.get_dir_name() + " body " + "\n"
+      print "読み込みエラー head" + @page.get_dir_name() + "\n"
+      @head = ""
+    else
+      @head = $1
+    end
+
+    # headerを取り出す
+    i = @header.match(/<header.*?>(.*?)<\/header>/m)
+    if $1 == nil then
+      print "読み込みエラー header" + @page.get_dir_name() + "\n"
+      @header = ""
+    else
+      @header = $1
+    end
+
+    # navを取り出す
+    i = @nav.match(/<nav.*?>(.*?)<\/nav>/m)
+    if $1 == nil then
+      print "読み込みエラー nav" + @page.get_dir_name() + "\n"
+      @nav = ""
+    else
+      @nav = $1
+    end
+
+        # asideを取り出す
+        i = @aside.match(/<aside.*?>(.*?)<\/aside>/m)
+        if $1 == nil then
+          print "読み込みエラー aside" + @page.get_dir_name() + "\n"
+          @aside = ""
+        else
+          @aside = $1
+        end
+
+                # footerを取り出す
+                i = @footer.match(/<footer.*?>(.*?)<\/footer>/m)
+                if $1 == nil then
+                  print "読み込みエラー footer" + @page.get_dir_name() + "\n"
+                  @footer = ""
+                else
+                  @footer = $1
+                end
+
+
+    # ボディを取り出す
+    i = @body.match(/<body.*?>(.*?)<\/body>/m)
+    if $1 == nil then
+      print "読み込みエラー body" + @page.get_dir_name() + "\n"
       @body = ""
     else
       @body = $1
     end
 
-    # ヘッダを取り出す。
-    i = @header.match(/(<head.*?>.*?<\/head>)/m)
-    if $1 == nil then
-      print @page.get_dir_name() + " header " + "\n"
-      @header = ""
-    else
-      @header = $1
-    end
-     # フッターを取り出す。
-     i = @footer.match(/<body.*?>(.*?<\/body>)/m)
-     if $1 == nil then
-       print @page.get_dir_name() + " footer " + "\n"
-       @footer = ""
-     else
-       @footer = $1
-     end
 
     self.keyword()
     self.lftp()
@@ -124,7 +156,7 @@ class Page
   end
 
   def get_dir_name()
-    return @dir.sub("./Config/template/", "")
+    return @dir.sub("./template/", "")
   end
 
   def get_title()
@@ -137,17 +169,17 @@ class Page
     return description
   end
 
-  def get_index()
-    index = File.open(@dir + "/index.html", 'r:utf-8').read
-    index.scan(/<body.*?>(.*?)<\/body>/m)
-    index = $1
-    return index
+  def get_article()
+    article = File.open(@dir + "/article.html", 'r:utf-8').read
+    article.scan(/<article.*?>(.*?)<\/article>/m)
+    article = $1
+    return article
   end
 end
 
 # ディレクトリ一覧取得
 pages = []
-Dir.glob('./Config/template/*').each{|dir|
+Dir.glob('./contents/*').each{|dir|
   unless Dir.exist?(dir) then
     #print dir
   else
