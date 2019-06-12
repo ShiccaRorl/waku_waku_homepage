@@ -70,7 +70,7 @@ class CreateHtml
 
 
     html = html.gsub("./../image", "./image")
-    #@page.html = @page.html.gsub("../image", "./image")
+    html = html.gsub("../image", "./image")
 
     begin
       File.write("./www/" + "index.html", html)
@@ -102,6 +102,8 @@ class Page
     @aside           = File.open("./template/aside.html", 'r:utf-8').read
     @footer          = File.open("./template/footer.html", 'r:utf-8').read
     
+    @article         = File.open(self.get_dir_name() + "/article.html", 'r:utf-8').read
+
     @html            = File.open("./template/html.html", 'r:utf-8').read
     
 
@@ -216,8 +218,9 @@ Dir.glob('./contents/*').each{|dir|
 
 
 # HP作成
+create_htmls = []
 pages.each{|page|
-  create_html = CreateHtml.new(page)
-  create_html.create_body_index()
-  # create_html.create_body()
+  @create_htmls = CreateHtml.new(page)
 }
+@create_htmls.create_body_index()
+# @create_html.create_body()
