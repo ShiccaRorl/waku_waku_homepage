@@ -2,6 +2,20 @@
 <html> 
     <head> 
         <%= @head %> 
+        <style>
+.reset {
+    clear: both;
+}
+
+.left1 {
+    width: 20%;
+    float: left;
+}
+
+.left2 {
+    width: 80%;
+    float: left;
+}</style>
     </head>     
     <body> 
         <header>
@@ -11,13 +25,13 @@
             <%= @nav %>
         </nav>         
         <article>
-         <div class="left2">
-            <%= self.get_article() %>
+            <div class="left1">
+                <%= self.get_article() %>
             </div>
         </article>         
         <aside>
-        <div class="left1">
-            <%= @aside %>
+            <div class="left2">
+                <%= @aside %>
             </div>
         </aside>         
         <footer>
