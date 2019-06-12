@@ -54,9 +54,6 @@ class CreateHtml
 
   def create_body_index()
     # くっつける
-  
-    #body = @body.gsub("./../image", "./image")
-    #footer = @footer.gsub("./../image", "./image")
 
     html = @doctype + @page.html + @doctype2
     #p changelogmemo
@@ -69,8 +66,10 @@ class CreateHtml
     html = erb.result(binding)
 
 
-    html = html.gsub("./../image", "./image")
-    html = html.gsub("../image", "./image")
+    html.gsub!("./../image", "./image")
+    html.gsub!("../image", "./image")
+    html.gsub!("./../", "./")
+    html.gsub!("../", "./")
 
     begin
       File.write("./www/" + "index.html", html)
@@ -101,8 +100,8 @@ class Page
     @nav             = File.open("./template/nav.html", 'r:utf-8').read
     @aside           = File.open("./template/aside.html", 'r:utf-8').read
     @footer          = File.open("./template/footer.html", 'r:utf-8').read
-    
-    @article         = File.open(self.get_dir_name() + "/article.html", 'r:utf-8').read
+  
+    @article         = File.open("./contents/" + self.get_dir_name() + "/article.html", 'r:utf-8').read
 
     @html            = File.open("./template/html.html", 'r:utf-8').read
     
@@ -167,7 +166,7 @@ self.create_html()
   end
 
   def get_dir_name()
-    return @dir.sub("./template/", "")
+    return @dir.sub("./contents/", "")
   end
 
   def get_title()
@@ -218,9 +217,16 @@ Dir.glob('./contents/*').each{|dir|
 
 
 # HP作成
-create_htmls = []
+@create_htmls = []
 pages.each{|page|
-  @create_htmls = CreateHtml.new(page)
+  @create_htmls << CreateHtml.new(page)
 }
-@create_htmls.create_body_index()
-# @create_html.create_body()
+
+@create_htmls.each{|html|
+  if html.page.get_dir_name() == "index" then
+    html.create_body_index()
+  else
+    html.create_body()
+  end
+}
+
