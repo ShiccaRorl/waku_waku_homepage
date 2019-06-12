@@ -100,11 +100,11 @@ class Page
     @nav             = File.open("./template/nav.html", 'r:utf-8').read
     @aside           = File.open("./template/aside.html", 'r:utf-8').read
     @footer          = File.open("./template/footer.html", 'r:utf-8').read
-  
+
     @article         = File.open("./contents/" + self.get_dir_name() + "/article.html", 'r:utf-8').read
 
     @html            = File.open("./template/html.html", 'r:utf-8').read
-    
+
 
     # メタheadを取り出す
     i = @head.match(/<head.*?>(.*?)<\/head>/m)
@@ -133,23 +133,23 @@ class Page
       @nav = $1
     end
 
-        # asideを取り出す
-        i = @aside.match(/<aside.*?>(.*?)<\/aside>/m)
-        if $1 == nil then
-          print "読み込みエラー aside" + @page.get_dir_name() + "\n"
-          @aside = ""
-        else
-          @aside = $1
-        end
+    # asideを取り出す
+    i = @aside.match(/<aside.*?>(.*?)<\/aside>/m)
+    if $1 == nil then
+      print "読み込みエラー aside" + @page.get_dir_name() + "\n"
+      @aside = ""
+    else
+      @aside = $1
+    end
 
-                # footerを取り出す
-                i = @footer.match(/<footer.*?>(.*?)<\/footer>/m)
-                if $1 == nil then
-                  print "読み込みエラー footer" + @page.get_dir_name() + "\n"
-                  @footer = ""
-                else
-                  @footer = $1
-                end
+    # footerを取り出す
+    i = @footer.match(/<footer.*?>(.*?)<\/footer>/m)
+    if $1 == nil then
+      print "読み込みエラー footer" + @page.get_dir_name() + "\n"
+      @footer = ""
+    else
+      @footer = $1
+    end
 
 
     # ボディを取り出す
@@ -162,7 +162,7 @@ class Page
     end
 
 
-self.create_html()
+    self.create_html()
   end
 
   def get_dir_name()
@@ -229,4 +229,3 @@ pages.each{|page|
     html.create_body()
   end
 }
-
