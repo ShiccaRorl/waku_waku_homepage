@@ -2,7 +2,7 @@
 <html> 
     <head> 
         <%= @head %> 
-        <style>
+<style>
 .reset {
     clear: both;
 }
@@ -13,29 +13,43 @@
 }
 
 .left2 {
-    width: 80%;
+    width: 60%;
     float: left;
-}</style>
+}
+
+.right {
+    width: 20%;
+    float: right;
+}
+</style>
     </head>     
-    <body> 
-        <header>
-            <%= @header %>
-        </header>         
-        <nav>
-            <%= @nav %>
-        </nav>         
-        <article>
-            <div class="left1">
-                <%= self.get_article() %>
+    <body>
+        <div class="page">
+            <header>
+                <%= @header %>
+            </header>             
+            <nav>
+                <div id="wrapper">
+                    <%= @nav %>
+            </nav>             
+            <article>
+                <div class="left1">
+                    <!--ダミー-->                     
+                </div>
+                <div class="left2">
+                    <%= self.get_article() %>
+                </div>
+            </article>             
+            <aside>
+                <div class="right">
+                    <%= @aside %>
+                </div>
             </div>
-        </article>         
-        <aside>
-            <div class="left2">
-                <%= @aside %>
-            </div>
-        </aside>         
-        <footer>
-            <%= @footer %>
-        </footer>         
-    </body>     
+        </div>
+    </div>
+</aside> 
+<footer>
+    <%= @footer %>
+</footer>
+</body>     
 </html>

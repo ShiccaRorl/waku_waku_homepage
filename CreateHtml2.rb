@@ -95,13 +95,14 @@ class Page
   attr_accessor :head, :header, :nav, :aside, :footer, :html
   def initialize(dir)
     @dir = dir
+
     @head            = File.open("./template/head.html", 'r:utf-8').read
     @header          = File.open("./template/header.html", 'r:utf-8').read
     @nav             = File.open("./template/nav.html", 'r:utf-8').read
     @aside           = File.open("./template/aside.html", 'r:utf-8').read
     @footer          = File.open("./template/footer.html", 'r:utf-8').read
 
-    @article         = File.open("./contents/" + self.get_dir_name() + "/article.html", 'r:utf-8').read
+    @article         = File.open(@dir + "/article.html", 'r:utf-8').read
 
     @html            = File.open("./template/html.html", 'r:utf-8').read
 
@@ -109,7 +110,7 @@ class Page
     # メタheadを取り出す
     i = @head.match(/<head.*?>(.*?)<\/head>/m)
     if $1 == nil then
-      print "読み込みエラー head" + @page.get_dir_name() + "\n"
+      print "読み込みエラー head " + self.get_dir_name() + "\n"
       @head = ""
     else
       @head = $1
@@ -118,7 +119,7 @@ class Page
     # headerを取り出す
     i = @header.match(/<header.*?>(.*?)<\/header>/m)
     if $1 == nil then
-      print "読み込みエラー header" + @page.get_dir_name() + "\n"
+      print "読み込みエラー header " + self.get_dir_name() + "\n"
       @header = ""
     else
       @header = $1
@@ -127,7 +128,7 @@ class Page
     # navを取り出す
     i = @nav.match(/<nav.*?>(.*?)<\/nav>/m)
     if $1 == nil then
-      print "読み込みエラー nav" + @page.get_dir_name() + "\n"
+      print "読み込みエラー nav " + self.get_dir_name() + "\n"
       @nav = ""
     else
       @nav = $1
@@ -136,7 +137,7 @@ class Page
     # asideを取り出す
     i = @aside.match(/<aside.*?>(.*?)<\/aside>/m)
     if $1 == nil then
-      print "読み込みエラー aside" + @page.get_dir_name() + "\n"
+      print "読み込みエラー aside " + self.get_dir_name() + "\n"
       @aside = ""
     else
       @aside = $1
@@ -145,7 +146,7 @@ class Page
     # footerを取り出す
     i = @footer.match(/<footer.*?>(.*?)<\/footer>/m)
     if $1 == nil then
-      print "読み込みエラー footer" + @page.get_dir_name() + "\n"
+      print "読み込みエラー footer " + self.get_dir_name() + "\n"
       @footer = ""
     else
       @footer = $1
@@ -155,7 +156,7 @@ class Page
     # ボディを取り出す
     i = @html.match(/<html.*?>(.*?)<\/html>/m)
     if $1 == nil then
-      print "読み込みエラー html" + @page.get_dir_name() + "\n"
+      print "読み込みエラー html " + self.get_dir_name() + "\n"
       @html = ""
     else
       @html = $1
